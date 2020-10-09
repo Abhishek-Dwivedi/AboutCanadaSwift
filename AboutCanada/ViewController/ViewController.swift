@@ -54,14 +54,19 @@ class ViewController: UIViewController {
             .observe(on: MainScheduler.instance)
             .subscribe(onNext: { [weak self] data in
                 self?.data = data ?? CanadaDataModel()
+                self?.title = data?.title
                 self?.tableView.reloadData()
             }).disposed(by: disposeBag)
         
         viewModel.error
             .observe(on: MainScheduler.instance)
             .subscribe(onNext: { [weak self] error in
-                if self?.presentingViewController == nil {
-                    self?.showErrorAlert(error: error)
+                if let error = error {
+                    if error != "" {
+                        if self?.presentingViewController == nil {
+                            self?.showErrorAlert(error: error)
+                        }
+                    }
                 }
             }).disposed(by: disposeBag)
     }
