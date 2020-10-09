@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import Kingfisher
 
 class ViewController: UIViewController {
     
@@ -76,8 +77,14 @@ extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CustomCell
         let data = self.data.rows?[indexPath.row]
-        cell.titleLabel.text = data!.title
-        cell.descriptionLabel.text = data!.description
+        if let data = data {
+            cell.titleLabel.text = data.title
+            cell.descriptionLabel.text = data.description
+            if let url = data.imageHref {
+                let url = URL(string: url)
+                cell.imageview.kf.setImage(with: url)
+            }
+        }
         return cell
     }
 }
