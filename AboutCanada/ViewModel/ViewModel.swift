@@ -13,8 +13,8 @@ import RxCocoa
 class ViewModel {
     
     lazy var networkManager = NetworkManager()
-    var dataModel = PublishSubject<CanadaDataModel?>()
-    var error = PublishSubject<String?>()
+    var dataModel = BehaviorSubject<CanadaDataModel?>(value: CanadaDataModel())
+    var error = BehaviorSubject<String?>(value: "")
     
     func getCanadaData() {
         networkManager.getCanadaData { (data, error) in
