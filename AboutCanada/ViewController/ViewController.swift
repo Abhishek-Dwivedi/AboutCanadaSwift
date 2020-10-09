@@ -13,12 +13,17 @@ import Kingfisher
 
 class ViewController: UIViewController {
     
-    lazy var viewModel = ViewModel()
-    let disposeBag = DisposeBag()
+    private var viewModel = ViewModel()
+    private let disposeBag = DisposeBag()
     
-    let tableView = UITableView()
-    var safeArea = UILayoutGuide()
-    var data = CanadaDataModel()
+    private var safeArea = UILayoutGuide()
+    private var data = CanadaDataModel()
+    
+    /*
+     UI Components
+     */
+    private let tableView = UITableView()
+    private let refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +31,7 @@ class ViewController: UIViewController {
         
         setupUI()
         setupTableView()
+        setupRefreshControl()
         viewModel.getCanadaData()
         bindData()
     }
@@ -47,6 +53,22 @@ class ViewController: UIViewController {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.register(CustomCell.self, forCellReuseIdentifier: "cell")
         tableView.dataSource = self
+    }
+    
+    /*
+     Pull to refresh
+     */
+    private func setupRefreshControl() {
+        tableView.refreshControl = refreshControl
+        refreshControl.addTarget(self, action: #selector(refreshData(_:)), for: .valueChanged)
+        refreshControl.tintColor = UIColor(red:0.25, green:0.72, blue:0.85, alpha:1.0)
+        refreshControl.attributedTitle = NSAttributedString(string: "Fetching Details...", attributes: nil)
+    }
+    
+    @objc private func refreshData(_ sender: Any) {
+        // Fetch Data
+        viewModel.getCanadaData()
+        self.refreshControl.endRefreshing()
     }
     
     /*
