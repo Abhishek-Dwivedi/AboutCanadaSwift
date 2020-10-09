@@ -7,28 +7,33 @@
 //
 
 import XCTest
+import RxSwift
 @testable import AboutCanada
 
 class AboutCanadaTests: XCTestCase {
-
+    
+    var viewModel: ViewModel?
+    var disposeBag: DisposeBag?
+    
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        viewModel = ViewModel()
+        disposeBag = DisposeBag()
     }
-
+    
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
+        viewModel = nil
+        disposeBag = nil
     }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    func test_get_data() {
+        
+        viewModel?.getCanadaData()
+        viewModel?.dataModel.subscribe(onNext: { (data) in
+            //If parsing is successful and data is not nil, testcase is passed.
+            //Instead of actual API call, local JSON can be read.
+            XCTAssertNotNil(data)
+        }).disposed(by: disposeBag!)
     }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
 }

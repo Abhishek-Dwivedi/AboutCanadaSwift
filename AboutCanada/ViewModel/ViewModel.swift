@@ -16,6 +16,11 @@ class ViewModel {
     var dataModel = BehaviorSubject<CanadaDataModel?>(value: CanadaDataModel())
     var error = BehaviorSubject<String?>(value: "")
     
+    /*
+     Gets data from network manager and sets it to
+     - data model on success, or
+     - error on failure.
+     */
     func getCanadaData() {
         networkManager.getCanadaData { (data, error) in
             if let error = error {

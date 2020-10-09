@@ -9,6 +9,9 @@
 import UIKit
 
 extension ViewController {
+    /*
+     Utility function to show alerts.
+     */
     func showErrorAlert(error: String?) {
         let alert = UIAlertController(title: "Sorry!",
                                       message: error,

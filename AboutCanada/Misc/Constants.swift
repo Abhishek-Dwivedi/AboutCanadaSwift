@@ -8,11 +8,17 @@
 
 import Foundation
 
+/*
+ Constants strings for Request Headers.
+ */
 enum HeaderConstants: String {
     case json = "application/json"
     case contentType = "Content-Type"
 }
 
+/*
+ Constant strings for Error messaages.
+ */
 enum ErrorConstants: String {
     case generic = "Something went wrong, please try again later!"
 }

@@ -19,6 +19,8 @@
 		3228BCC8253081B800E0AF85 /* ViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3228BCC7253081B800E0AF85 /* ViewController+Alert.swift */; };
 		3228BCCA253081EE00E0AF85 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3228BCC9253081EE00E0AF85 /* Constants.swift */; };
 		3228BCD325308A9100E0AF85 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3228BCD225308A9100E0AF85 /* CustomCell.swift */; };
+		326E03D625309BB000104BB2 /* canada.json in Resources */ = {isa = PBXBuildFile; fileRef = 326E03D525309BB000104BB2 /* canada.json */; };
+		326E03D825309C2C00104BB2 /* TestParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326E03D725309C2C00104BB2 /* TestParser.swift */; };
 		517F209DB1A2E1FDB369BB63 /* Pods_AboutCanada.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA9AB066B074179135F9689D /* Pods_AboutCanada.framework */; };
 		D4DE0FC0898114CC7EB22F59 /* Pods_AboutCanadaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C8F0EB424C491CD7E65F382 /* Pods_AboutCanadaTests.framework */; };
 /* End PBXBuildFile section */
@@ -50,6 +52,8 @@
 		3228BCC7253081B800E0AF85 /* ViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Alert.swift"; sourceTree = "<group>"; };
 		3228BCC9253081EE00E0AF85 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3228BCD225308A9100E0AF85 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		326E03D525309BB000104BB2 /* canada.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = canada.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
+		326E03D725309C2C00104BB2 /* TestParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestParser.swift; sourceTree = "<group>"; };
 		9C8F0EB424C491CD7E65F382 /* Pods_AboutCanadaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AboutCanadaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA9AB066B074179135F9689D /* Pods_AboutCanada.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AboutCanada.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0D31B4A4E5A0C6F96CB454D /* Pods-AboutCanadaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AboutCanadaTests.release.xcconfig"; path = "Target Support Files/Pods-AboutCanadaTests/Pods-AboutCanadaTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -120,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				3228BCB62530743A00E0AF85 /* AboutCanadaTests.swift */,
+				326E03D525309BB000104BB2 /* canada.json */,
 				3228BCB82530743A00E0AF85 /* Info.plist */,
 			);
 			path = AboutCanadaTests;
@@ -178,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				3228BCC9253081EE00E0AF85 /* Constants.swift */,
+				326E03D725309C2C00104BB2 /* TestParser.swift */,
 			);
 			path = Misc;
 			sourceTree = "<group>";
@@ -303,6 +309,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				326E03D625309BB000104BB2 /* canada.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,6 +390,7 @@
 				3228BCC2253074A400E0AF85 /* ViewModel.swift in Sources */,
 				3228BCD325308A9100E0AF85 /* CustomCell.swift in Sources */,
 				3228BCC8253081B800E0AF85 /* ViewController+Alert.swift in Sources */,
+				326E03D825309C2C00104BB2 /* TestParser.swift in Sources */,
 				3228BCA22530743900E0AF85 /* SceneDelegate.swift in Sources */,
 				3228BCC6253074D400E0AF85 /* CanadaDataModel.swift in Sources */,
 				3228BCCA253081EE00E0AF85 /* Constants.swift in Sources */,

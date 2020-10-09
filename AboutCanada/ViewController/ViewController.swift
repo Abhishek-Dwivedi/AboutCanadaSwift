@@ -49,6 +49,11 @@ class ViewController: UIViewController {
         tableView.dataSource = self
     }
     
+    /*
+     Binds view model variables to view controller to observe changes in the properties.
+     - On change of data, reload the table.
+     - On change of error, show error alert.
+     */
     private func bindData() {
         viewModel.dataModel
             .observe(on: MainScheduler.instance)

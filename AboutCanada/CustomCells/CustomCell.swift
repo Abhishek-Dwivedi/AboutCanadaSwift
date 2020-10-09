@@ -19,31 +19,46 @@ class CustomCell: UITableViewCell {
         
         let marginGuide = contentView.layoutMarginsGuide
     
+        /*
+         Image view setup
+         */
         contentView.addSubview(imageview)
+        //Setting constraints
         imageview.translatesAutoresizingMaskIntoConstraints = false
         imageview.leadingAnchor.constraint(equalTo: marginGuide.leadingAnchor).isActive = true
         imageview.topAnchor.constraint(equalTo: marginGuide.topAnchor).isActive = true
         imageview.widthAnchor.constraint(equalToConstant: 30).isActive = true
         imageview.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        //Setting rounded corners to image views.
         imageview.layer.cornerRadius = 15
         imageview.layer.masksToBounds = true
         
+        /*
+         Title label setup
+         */
         contentView.addSubview(titleLabel)
+        //Setting constraints
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.heightAnchor.constraint(greaterThanOrEqualToConstant: 30).isActive = true
         titleLabel.leadingAnchor.constraint(equalTo: imageview.trailingAnchor, constant: 8).isActive = true
         titleLabel.topAnchor.constraint(equalTo: imageview.topAnchor).isActive = true
         titleLabel.trailingAnchor.constraint(equalTo: marginGuide.trailingAnchor).isActive = true
+        
         titleLabel.numberOfLines = 0
         titleLabel.font = UIFont(name: "AvenirNext-DemiBold", size: 16)
         titleLabel.textColor = .black
         
+        /*
+         Description label setup
+         */
         contentView.addSubview(descriptionLabel)
+        //Setting constraints
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
         descriptionLabel.leadingAnchor.constraint(equalTo: imageview.trailingAnchor, constant: 8).isActive = true
         descriptionLabel.bottomAnchor.constraint(equalTo: marginGuide.bottomAnchor).isActive = true
         descriptionLabel.trailingAnchor.constraint(equalTo: marginGuide.trailingAnchor).isActive = true
         descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor).isActive = true
+        
         descriptionLabel.numberOfLines = 0
         descriptionLabel.font = UIFont(name: "Avenir-Book", size: 12)
         descriptionLabel.textColor = .darkGray
